@@ -1,0 +1,43 @@
+{
+  "elements": [
+    {
+      "tag": "markdown",
+      "content": "sourceTopic: %s"
+    },
+    {
+      "tag": "div",
+      "text": {
+        "content": "targetTopic: %s",
+        "tag": "plain_text"
+      }
+    },
+    {
+      "tag": "div",
+      "text": {
+        "content": "sourceNum: %s",
+        "tag": "plain_text"
+      }
+    },
+    {
+      "tag": "div",
+      "text": {
+        "content": "targetNum: %s",
+        "tag": "plain_text"
+      }
+    },
+    {
+      "tag": "div",
+      "text": {
+        "content": "targetFailNum: %s",
+        "tag": "plain_text"
+      }
+    }
+  ],
+  "header": {
+    "template": "blue",
+    "title": {
+      "content": "mq消息同步",
+      "tag": "plain_text"
+    }
+  }
+}
