@@ -62,3 +62,11 @@ name := "weihubeats"
 name1, name2 := "小奏技术", "ces"
 ```
 > 相关源码在 student/variantdemo/variantdemo.go
+
+
+
+## 结构体
+[README.md](student%2Fstruct-demo%2FREADME.md)
+
+## map
+[README.md](student%2Fmap-demo%2FREADME.md)
