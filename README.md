@@ -64,9 +64,17 @@ name1, name2 := "小奏技术", "ces"
 > 相关源码在 student/variantdemo/variantdemo.go
 
 
+## 值类型和引用类型
+值类型: 基本数据类型int、float、bool、string、数组和结构体(struct)
+引用类型: 指针、切片(slice)、map、管道(chan)、接口(interface)
+
+## map
+[README.md](student%2Fmap-demo%2FREADME.md)
+
+## defer
+[README.md](student%2Fdefer-demo%2FREADME.md)
 
 ## 结构体
 [README.md](student%2Fstruct-demo%2FREADME.md)
 
-## map
-[README.md](student%2Fmap-demo%2FREADME.md)
+
