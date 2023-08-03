@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	ch := make(chan string)
+	// 定义一个 string 类型的chan 容量为1 chan是一个先进先出(FIFO)的队列
+	ch := make(chan string, 1)
 	// 开启一个协程
 	go Hello(ch)
 
