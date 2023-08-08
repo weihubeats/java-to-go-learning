@@ -12,10 +12,20 @@ type Apple struct {
 	Name string
 }
 
+type Bananas struct {
+	Name string
+}
+
 // 实现了 Fruit 接口
 func (xiaozou *Apple) SetName(name string) bool {
 	xiaozou.Name = name
 	return true
+}
+
+func (xiaozou *Apple) Setname(name string) bool {
+	xiaozou.Name = name
+	return true
+
 }
 
 func main() {
