@@ -2,9 +2,9 @@ module java-to-go-learning
 
 go 1.19
 
+require github.com/go-redis/redis v0.0.0-20190803144825-742f3ccb21cd
 
 require (
-	github.com/go-redis/redis v0.0.0-20190803144825-742f3ccb21cd
 	contrib.go.opencensus.io/exporter/ocagent v0.6.0 // indirect
 	github.com/apache/rocketmq-clients/golang v0.0.0-20230321063829-41bfbcf6130d // indirect
 	github.com/census-instrumentation/opencensus-proto v0.3.0 // indirect
@@ -22,8 +22,8 @@ require (
 	github.com/valyala/fastrand v1.1.0 // indirect
 	go.opencensus.io v0.22.5 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
-	go.uber.org/multierr v1.8.0 // indirect
-	go.uber.org/zap v1.21.0 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
+	go.uber.org/zap v1.25.0 // indirect
 	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa // indirect
 	golang.org/x/net v0.0.0-20220809184613-07c6da5e1ced // indirect
 	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
