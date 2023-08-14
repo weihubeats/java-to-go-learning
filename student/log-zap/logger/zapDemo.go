@@ -5,6 +5,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"net/http"
+	"time"
 )
 
 var logger *zap.Logger
@@ -12,8 +13,11 @@ var logger *zap.Logger
 func main() {
 	InitLogger()
 	defer logger.Sync()
-	simpleHttpGet("www.google.com")
-	simpleHttpGet("https://www.baidu.com")
+	for true {
+		logger.Error("test error")
+	}
+	/*simpleHttpGet("www.google.com")
+	simpleHttpGet("https://www.baidu.com")*/
 }
 
 func InitLogger() {
@@ -41,7 +45,10 @@ func simpleHttpGet(url string) {
 
 func getEncoder() zapcore.Encoder {
 	config := zap.NewProductionEncoderConfig()
-	config.EncodeTime = zapcore.ISO8601TimeEncoder
+	//config.EncodeTime = zapcore.ISO8601TimeEncoder
+	config.EncodeTime = func(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
+		enc.AppendString(t.Format("2006-01-02 15:04:05"))
+	}
 	config.EncodeLevel = zapcore.CapitalLevelEncoder
 	return zapcore.NewConsoleEncoder(config)
 }
@@ -49,7 +56,7 @@ func getEncoder() zapcore.Encoder {
 func getLogWriter() zapcore.WriteSyncer {
 	lumberJackLogger := &lumberjack.Logger{
 		Filename:   "./test.log",
-		MaxSize:    10,
+		MaxSize:    1,
 		MaxBackups: 5,
 		MaxAge:     30,
 		Compress:   false,

@@ -1,10 +1,17 @@
 package main
 
+import "fmt"
+
 type Student struct {
 	name string
 }
 
 func main() {
+	// 匿名函数
+	greet := func(name string) {
+		fmt.Println("Hello, " + name + "!")
+	}
+	greet("小奏技术")
 
 }
 
