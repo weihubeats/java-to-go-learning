@@ -59,25 +59,31 @@ func main() {
 	}
 	// graceful stop producer
 	defer producer.GracefulStop()
-
 	for i := 0; i < 10; i++ {
-		// new a message
-		msg := &rmq_client.Message{
-			Topic: Topic,
-			Body:  []byte("this is a message : " + strconv.Itoa(i)),
-		}
-		// set keys and tag
-		msg.SetKeys("a", "b")
-		msg.SetTag("ab")
-		// send message in sync
-		resp, err := producer.Send(context.TODO(), msg)
-		if err != nil {
-			log.Fatal(err)
-		}
-		for i := 0; i < len(resp); i++ {
-			fmt.Printf("%#v\n", resp[i])
-		}
-		// wait a moment
-		time.Sleep(time.Second * 1)
+		go func() {
+			for i := 0; i < 100; i++ {
+				// new a message
+				msg := &rmq_client.Message{
+					Topic: Topic,
+					Body:  []byte("xiaozou message : " + strconv.Itoa(i)),
+				}
+				// set keys and tag
+				msg.SetKeys("a", "b")
+				msg.SetTag("ab")
+				// send message in sync
+				resp, err := producer.Send(context.TODO(), msg)
+				if err != nil {
+					log.Fatal(err)
+				}
+				for i := 0; i < len(resp); i++ {
+					fmt.Printf("%#v\n", resp[i])
+				}
+				// wait a moment
+				time.Sleep(time.Second * 1)
+			}
+		}()
 	}
+
+	select {}
+
 }

@@ -25,3 +25,12 @@ func Hello(c chan string) {
 	fmt.Println("hello", name)
 
 }
+
+func Producer(queue chan<- int) {
+	for i := 0; i < 10; i++ {
+		// 写入数据
+		queue <- i
+		fmt.Println("create: ", i)
+	}
+
+}
