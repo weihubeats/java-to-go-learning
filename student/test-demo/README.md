@@ -7,6 +7,16 @@ go语言单元测试不像java 有单独的测试包，然后需要引入三方�
 2. 测试类命名规定为 xxx_test.go
 3. 测试方法名必须 Testxxx(t *testing.T)
 
+## 单元测试覆盖率
+```go
+go test -cover
+```
+
+
 ## 例子
 
 例子参考 [fooer_test.go](fooer_test.go)
+
+
+## 博文
+https://blog.jetbrains.com/zh-hans/go/2023/01/03/comprehensive-guide-to-testing-in-go/
