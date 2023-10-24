@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"testing"
+	"time"
 )
 
 func TestFooer(t *testing.T) {
@@ -40,4 +41,26 @@ func main() {
 	go sum(s[len(s)/2:], c)
 	x, y := <-c, <-c // receive from c
 	fmt.Println(x, y, x+y)
+}
+
+func FuzzTest11(f *testing.F) {
+	var ch = make(chan int)
+
+	for i := 0; i < 10; i++ {
+		go func() {
+			for data := range ch {
+				fmt.Println("取出数据", data)
+			}
+		}()
+	}
+
+	go func() {
+		for true {
+			ch <- 1
+			time.Sleep(2 * time.Second)
+
+		}
+	}()
+
+	time.Sleep(60 * time.Second)
 }
