@@ -83,7 +83,13 @@ name1, name2 := "小奏技术", "ces"
 文件名: go.mod
 使用方式:
 github地址 版本
-例子: `github.com/go-redis/redis v0.0.0-20190803144825-742f3ccb21cd`
+
+例子: 
+`github.com/go-redis/redis v0.0.0-20190803144825-742f3ccb21cd`
+
+`go get github.com/apolloconfig/agollo/v4@v4.3.1`
+
+
 
 他的版本不同于maven 需要发到中央仓库，是直接使用git 的tag作为版本号
 也可以直接使用指定分支的版本
@@ -91,6 +97,10 @@ github地址 版本
 1. 执行命令: `go get  git地址@分支名`
 2. 直接在go.mod文件中添加，格式如下：`git地址  v0.0.0-时间戳- commint id`
 
+如果404可以设置代理
+```go
+go env -w GOPROXY=https://goproxy.cn,direct
+```
 
 
 ## 整理一下goland学习资料
