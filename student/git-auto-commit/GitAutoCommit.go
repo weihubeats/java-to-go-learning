@@ -14,6 +14,7 @@ const (
 	defaultPath     = "/Users/xiaozou/Desktop/sofe/java/weihubeats"
 	defaultInterval = "10s"
 	defaultJavaFile = "MQ.java"
+	commitMsg       = "add test"
 )
 
 func main() {
@@ -34,7 +35,7 @@ func main() {
 	if !checkFileExists(filePath) {
 		err := os.WriteFile(filePath, []byte{}, 0644)
 		if err != nil {
-			fmt.Printf("Failed to create file %s: error: %s/n", defaultJavaFile, err)
+			fmt.Printf("Failed to create file %s: error: %s\n", defaultJavaFile, err)
 			return
 		}
 		fmt.Printf("create file %s success/n", defaultJavaFile)
@@ -60,11 +61,6 @@ func main() {
 
 		} else {
 			fmt.Println("remove space success")
-		}
-
-		commitMsg := "add space to HelloWord.java"
-		if !addSpace {
-			commitMsg = "Remove space from HelloWord.java"
 		}
 
 		if err := commitChanges(projectPath, commitMsg); err != nil {
