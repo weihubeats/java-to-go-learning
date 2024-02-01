@@ -8,7 +8,7 @@
 
 ### 编译
 ```shell
-go.build
+go build test.go
 ```
 ### 运行
 编译完后出现一个xxx.exe
@@ -103,7 +103,7 @@ go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
 
-## 整理一下goland学习资料
+## 整理一下golang学习资料
 
 - [100天精通Golang(基础入门篇](https://blog.csdn.net/qq_44866828/category_12339137.html)
 - [扫清go语言一切障碍，go语言实战](https://github.com/golang-minibear2333/golang)
