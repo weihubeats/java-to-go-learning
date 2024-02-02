@@ -11,7 +11,7 @@ import (
 const (
 	SecretAppID     = "test"
 	SecretNameSpace = "application"
-	SecretKey       = "bd5ebb9fc733476384333b8f6a56a05f"
+	SecretKey       = "235235"
 )
 
 func main() {
