@@ -77,6 +77,10 @@ name1, name2 := "小奏技术", "ces"
 ## 结构体
 [README.md](student%2Fstruct-demo%2FREADME.md)
 
+## tag
+
+结构体后面会跟着一些字符串
+
 
 ## 依赖管理
 现在最新最流行的依赖管理是go mod 和java 的maven 的pom类似

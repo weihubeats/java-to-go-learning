@@ -6,8 +6,8 @@ import (
 )
 
 type Student struct {
-	Name string
-	age  int
+	Name string `yaml:"name"`
+	age  int    `yaml:"age"`
 }
 
 func (student *Student) SetName1(name string) {
@@ -80,6 +80,11 @@ func main() {
 		"匿名结构体",
 	}
 	fmt.Println(anonymizeStruct.Name)
-	//
+
+	// 结构体指针
+	var xiaozouPoint *Student
+
+	xiaozouPoint = &Student{Name: "小奏", age: 18}
+	fmt.Println(&xiaozouPoint.Name)
 
 }
